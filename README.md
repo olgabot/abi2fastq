@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/olgabot/abi2fastq.svg?branch=master)](https://travis-ci.org/olgabot/abi2fastq) [![PyPI Versions](https://img.shields.io/pypi/pyversions/abi2fastq.svg)]()
-[![PyPI License](https://img.shields.io/pypi/l/abi2fastq.svg)]()
+[![Build Status](https://travis-ci.org/olgabot/abi2fastq.svg?branch=master)](https://travis-ci.org/olgabot/abi2fastq)
+[![PyPI Versions](https://img.shields.io/pypi/pyversions/abi2fastq.svg)]()
+[![PyPI License](https://img.shields.io/pypi/l/abi2fastq.svg)]() [![codecov](https://codecov.io/gh/olgabot/abi2fastq/branch/master/graph/badge.svg)](https://codecov.io/gh/olgabot/abi2fastq)
+
 
 # abi2fastq
 abi2fastq is a small utility to convert Sanger sequencing reads in .abi (applied biosystems) format to FASTQ
