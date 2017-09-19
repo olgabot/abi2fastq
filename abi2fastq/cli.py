@@ -89,7 +89,7 @@ def maybe_trim(no_trim, verbose, record, min_trim_length, min_quality):
                    'be trimmed')
 def cli(filename, verbose=True, no_trim=False, min_trim_length=20,
         max_error_prob=0.05):
-    """Convert Sanger sequencing format (ABI) to FASTQ, writes to stdout
+    """Convert Sanger sequencing format (.ab1) to FASTQ, writes to stdout
     
     Trimming is performed using the Mott algorithm
     - http://www.phrap.org/phredphrap/phred.html
@@ -106,9 +106,6 @@ def cli(filename, verbose=True, no_trim=False, min_trim_length=20,
     # Write the trimmed file to fastq
     fastq = filename.replace('.ab1', '.fastq')
     SeqIO.write(trimmed, sys.stdout, 'fastq')
-
-    # Write a message to the user (myself) so they know what happened
-    click.echo(f'\tDone. Wrote to "{fastq}"')
 
 
 if __name__ == "__main__":
