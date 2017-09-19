@@ -63,7 +63,8 @@ def maybe_trim(no_trim, verbose, record, min_trim_length, min_quality):
     if not no_trim:
         # Remove bases with probability score less than 0.05
         if verbose:
-            click.echo(f'\tTrimming bases with probability score < 0.05 ...')
+            click.echo('\tTrimming bases with probability score '
+                       '> {min_quality} ...'.format(min_quality=min_quality))
 
         trimmed = trim(record, min_trim_length, min_quality)
 
@@ -95,7 +96,7 @@ def cli(filename, verbose=True, no_trim=False, min_trim_length=20,
     """
     # Open the Sanger sequencing trace
     if verbose:
-        click.echo(f'Reading "{filename}" ...')
+        click.echo('Reading "{filename}" ...'.format(filename=filename))
 
     record = SeqIO.read(filename, 'abi')
 
