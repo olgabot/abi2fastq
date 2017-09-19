@@ -16,5 +16,8 @@ setup(
     packages=['abi2fastq'],
     install_requires=required,
     long_description='See ' + 'https://github.com/olgabot/abi2fastq',
-    license='MIT'
+    license='MIT',
+    entry_points={'console_scripts': [
+        'abi2fastq = abi2fastq.cli:cli'
+    ]}
 )
