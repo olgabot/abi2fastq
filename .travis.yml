@@ -13,7 +13,7 @@ before_install:
 - conda update -q conda
 - conda info -a
 install:
-- conda env create --file data/environment_no_python.yml python=$TRAVIS_PYTHON_VERSION
+- conda env create --file testing/environment_no_python.yml python=$TRAVIS_PYTHON_VERSION
 - source activate testenv
 - pip install .
 script:
