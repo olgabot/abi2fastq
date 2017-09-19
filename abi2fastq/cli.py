@@ -3,6 +3,8 @@ import sys
 from Bio import SeqIO
 import click
 
+settings = dict(help_option_names=['-h', '--help'])
+
 
 def trim(record, min_trim_length=20, max_error_prob=0.05):
     """Remove low-quality bases from the sequence
@@ -76,7 +78,7 @@ def maybe_trim(no_trim, verbose, record, min_trim_length, min_quality):
     return trimmed
 
 
-@click.command()
+@click.command(context_settings=settings)
 @click.argument('filename')
 @click.option('--verbose', is_flag=True, help="Show progress messages")
 @click.option('--no-trim', is_flag=True,
