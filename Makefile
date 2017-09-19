@@ -12,3 +12,6 @@ coverage:
 
 lint:
 	flake8 --exclude docs abi2fastq
+
+pypi:
+	python setup.py sdist upload
