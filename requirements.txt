@@ -1,0 +1,16 @@
+biopython
+certifi
+click
+coverage
+flake8
+mccabe
+mmtf-python
+msgpack-python
+numpy
+olefile
+Pillow
+py
+pycodestyle
+pyflakes
+pytest
+reportlab
