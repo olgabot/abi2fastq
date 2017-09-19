@@ -39,7 +39,7 @@ def test_cli_help():
 
 Options:
   --verbose                  Show progress messages
-  --no-trim                  Don't trim nucleotides with error probability >0.05
+  --no-trim                  Don't trim nucleotides with error probability >0.05  # noqa
                              for 20 or more nucleotides in a row
   --min-trim-length INTEGER  Minimum length of "bad" sequencing scores in a
                              segment

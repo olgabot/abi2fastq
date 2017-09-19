@@ -6,9 +6,9 @@ import click
 
 def trim(record, min_trim_length=20, max_error_prob=0.05):
     """Remove low-quality bases from the sequence
-    
+
     Modified from Biopython
-    
+
     Parameters
     ----------
     record : biopython.SeqRecord
@@ -17,13 +17,12 @@ def trim(record, min_trim_length=20, max_error_prob=0.05):
         Minimum sequence of bad quality scores to find before trimming
     max_error_prob : float
         Maximum allowable probability that this base was incorrectly sequenced
-        
+
     Returns
     -------
     trimmed : biopython.SeqRecord
         Sequence with bad bases removed
     """
-
     # Has trimming begun?
     start = False
 
@@ -90,7 +89,7 @@ def maybe_trim(no_trim, verbose, record, min_trim_length, min_quality):
 def cli(filename, verbose=True, no_trim=False, min_trim_length=20,
         max_error_prob=0.05):
     """Convert Sanger sequencing format (.ab1) to FASTQ, writes to stdout
-    
+
     Trimming is performed using the Mott algorithm
     - http://www.phrap.org/phredphrap/phred.html
     """
@@ -103,8 +102,7 @@ def cli(filename, verbose=True, no_trim=False, min_trim_length=20,
     trimmed = maybe_trim(no_trim, verbose, record, min_trim_length,
                          max_error_prob)
 
-    # Write the trimmed file to fastq
-    fastq = filename.replace('.ab1', '.fastq')
+    # Write the trimmed file to fastq format on standard out
     SeqIO.write(trimmed, sys.stdout, 'fastq')
 
 
