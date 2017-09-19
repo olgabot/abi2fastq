@@ -1,4 +1,4 @@
-[![PyPI Versions](https://img.shields.io/pypi/pyversions/abi2fastq.svg)]()
+[![Build Status](https://travis-ci.org/olgabot/abi2fastq.svg?branch=master)](https://travis-ci.org/olgabot/abi2fastq)[![PyPI Versions](https://img.shields.io/pypi/pyversions/abi2fastq.svg)]()
 [![PyPI License](https://img.shields.io/pypi/l/abi2fastq.svg)]()
 
 # abi2fastq
