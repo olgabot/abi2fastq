@@ -7,15 +7,6 @@ abi2fastq is a small utility to convert Sanger sequencing reads in .abi (applied
 ## Installation
 
 
-### With `conda`/`bioconda` (recommended)
-
-As BioPython is a dependency of `abi2fastq`, it is recommended to use
-`bioconda` to install because of the C libraries that are necessary in `numpy`,
-a dependency of `bioconda.
-
-```
-conda install --channel bioconda abi2fastq
-```
 
 ### With `pip`
 
