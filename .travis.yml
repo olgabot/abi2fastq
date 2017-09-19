@@ -1,0 +1,28 @@
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+before_install:
+- wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+- bash miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- hash -r
+- conda config --set always_yes yes --set changeps1 no
+- conda update -q conda
+- conda info -a
+install:
+- conda env create --name abi2fastq --file data/environment_no_python.yml python=$TRAVIS_PYTHON_VERSION
+- source activate abi2fastq
+- pip install .
+script:
+- make coverage
+- make lint
+after_success:
+- pip install codecov
+- codecov
+- codecov --token=$CODECOV_TOKEN
+env:
+  global:
+    secure: TLvq5EhkJCqIEL+tg+rZYU+zMSSawWccKnlO4zsq7GqQ4qooP65B7txmiJIHDzQev9LQ9YWHoX5MM+0Ot1mYFDVCpTm0JKOP9Xk614hl5jIwdPZMoGljWkBBkp0mMDWbCKinncDJzEpRgv3HtAN40FJWxVeR4oRMmKMqaFblc0F3iA4BrzuObdbWkKAnMPpXqzLGSLcg7IuMSCsXpVlyZD9dCfrqDkGRjA8PnKdKuvMKG2fgzRBdIDJW2ZHAdTVpePnQcS/CufVTSNiO9sU69m4br1fSOyGJ+1ehwIkPcM8HwkcuNoWIA7kB6mu90aXADiW03d7rq8NvF6eY/niJddmcouMoSCaj/Gzvq9vZH9Jq49fPgjKm31tieh+ziiLkzqCk8faKGyiIyZVldtDirIn1jKCHoOJ6WDqmx7QXw5HzSyAC4znt8mGqYrHd3SjbFXW7/UOZaZNbLYiEVR0HcOekkvEbEtNNrtJEgLsxVodqiozDMc0dmUvj3x//nNflV1igWA32BsIcoK/qmXnnEgWOMUJ97Hu/rlBpWdmafeHMHZQsZ/gtqTSAr/w9eFCxktQ2qcnJ2S1Vk2AmmdPdsncVg0MiTQmwzY7AGB5YOLylTsljGf+kWLUc24NqKyAxiEQ5KY90UEFd5OQTr5gDhCkXGiA2Kj6Kv603JKoUm5M=

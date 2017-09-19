@@ -1,0 +1,38 @@
+channels:
+- bioconda
+- r
+- defaults
+- conda-forge
+dependencies:
+- biopython
+- mmtf-python
+- certifi
+- click
+- coverage
+- flake8
+- freetype
+- jbig
+- jpeg
+- libpng
+- libtiff
+- mccabe
+- mkl
+- msgpack-python
+- numpy
+- olefile
+- openssl
+- pillow
+- pip
+- py
+- pycodestyle
+- pyflakes
+- pytest
+- readline
+- reportlab
+- setuptools
+- sqlite
+- tk
+- wheel
+- xz
+- zlib
+
