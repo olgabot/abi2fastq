@@ -1,3 +1,4 @@
+name: testenv
 channels:
 - bioconda
 - r
